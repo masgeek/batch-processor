@@ -1,9 +1,13 @@
 package com.tsobu.fuelrodbatch
 
+import com.tsobu.fuelrodbatch.common.Tweet
+import org.jeasy.batch.core.filter.HeaderRecordFilter
 import org.jeasy.batch.core.job.JobBuilder
 import org.jeasy.batch.core.job.JobExecutor
 import org.jeasy.batch.core.writer.StandardOutputRecordWriter
+import org.jeasy.batch.flatfile.DelimitedRecordMapper
 import org.jeasy.batch.flatfile.FlatFileRecordReader
+import org.jeasy.batch.validation.BeanValidationRecordValidator
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.nio.file.Paths
@@ -18,14 +22,14 @@ object JobLauncher {
         val dataSource = Paths.get("tweets.csv")
 
 
-        // Build a batch job
         val job = JobBuilder()
             .named("fuelrod-message-queue")
             .reader(FlatFileRecordReader(dataSource))
+            .mapper(DelimitedRecordMapper(Tweet::class.java, "id", "name", "message"))
+            .validator(BeanValidationRecordValidator())
             .writer(StandardOutputRecordWriter())
             .build()
 
-        //Execute the job
         val jobExecutor = JobExecutor()
         val report = jobExecutor.execute(job)
         jobExecutor.shutdown()
