@@ -17,23 +17,23 @@ repositories {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
 
-    implementation("org.jeasy:easy-batch-core:6.0.0")
-    implementation("org.jeasy:easy-batch-jdbc:6.0.0")
+//    implementation("org.jeasy:easy-batch-core:6.0.0")
+//    implementation("org.jeasy:easy-batch-jdbc:6.0.0")
+//
+//    implementation("org.jeasy:easy-batch-flatfile:6.0.0")
+//    implementation("org.jeasy:easy-batch-xml:6.0.0")
+//    implementation("org.jeasy:easy-batch-json:6.0.0")
+//
+//    implementation("org.jeasy:easy-batch-hibernate:6.0.0")
+//    implementation("org.jeasy:easy-batch-validation:6.0.0")
+//    implementation("org.jeasy:easy-batch-spring:6.0.0")
+//    implementation("org.jeasy:easy-batch-jpa:6.0.0")
+//    implementation("org.jeasy:easy-batch-jms:6.0.0")
 
-    implementation("org.jeasy:easy-batch-flatfile:6.0.0")
-    implementation("org.jeasy:easy-batch-xml:6.0.0")
-    implementation("org.jeasy:easy-batch-json:6.0.0")
-
-    implementation("org.jeasy:easy-batch-hibernate:6.0.0")
-    implementation("org.jeasy:easy-batch-validation:6.0.0")
-    implementation("org.jeasy:easy-batch-spring:6.0.0")
-    implementation("org.jeasy:easy-batch-jms:6.0.0")
-
+    implementation("org.jobrunr:jobrunr:0.9.16")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.11.0")
     implementation("mysql:mysql-connector-java:8.0.20")
     implementation("org.yaml:snakeyaml:1.26")
 
     implementation("org.slf4j:slf4j-simple:1.7.25")
-
-    implementation("org.hsqldb:hsqldb:2.5.0")
-
 }
